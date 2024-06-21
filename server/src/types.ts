@@ -20,4 +20,4 @@ export interface CustomerData {
   cats: Cat[];
 }
 
-export type pouchSizes = 'A' | 'B' | 'C' | 'D' | 'E' | 'F';
+export type PouchSize = 'A' | 'B' | 'C' | 'D' | 'E' | 'F';

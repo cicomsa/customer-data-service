@@ -22,6 +22,7 @@ describe('AppController', () => {
     describe('getNextDelivery', () => {
       it('should return next delivery info when customer data is found', () => {
         const customerId: string = 'ff535484-6880-4653-b06e-89983ecf4ed5';
+
         expect(appController.getNextDelivery(customerId)).toEqual({
           title: 'Your next delivery for Dorian and Ocie',
           message:
@@ -33,6 +34,7 @@ describe('AppController', () => {
 
       it('should return undefined when customer data is not found', () => {
         const customerId: string = 'some-id';
+
         expect(appController.getNextDelivery(customerId)).toEqual(undefined);
       });
     });

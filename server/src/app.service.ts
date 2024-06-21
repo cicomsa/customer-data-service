@@ -9,9 +9,9 @@ export class AppService {
     return 'Hello World!';
   }
 
-  getNextDelivery(id: string): NextDeliveryData | undefined {
+  getNextDelivery(customerId: string): NextDeliveryData | undefined {
     const customerData: CustomerData | undefined = customersData.find(
-      (data) => data.id === id,
+      (data) => data.id === customerId,
     );
 
     if (!customerData) return;

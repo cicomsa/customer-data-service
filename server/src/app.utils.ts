@@ -1,16 +1,16 @@
-import { Cat, pouchSizes } from './types';
+import { Cat, PouchSize } from './types';
 
 export class AppUtils {
-  static formatCatsNames(cats: string[]): string {
-    if (cats.length > 2) {
-      const lastCat = cats.pop();
-      return `${cats.join(', ')} and ${lastCat}`;
+  static formatCatsNames(names: string[]): string {
+    if (names.length > 2) {
+      const lastCat = names.pop();
+      return `${names.join(', ')} and ${lastCat}`;
     }
-    return cats.join(' and ');
+    return names.join(' and ');
   }
 
   static calculateTotalPrice(cats: Cat[]): number {
-    const prices = {
+    const subscriptionPrices: Record<PouchSize, number> = {
       A: 55.5,
       B: 59.5,
       C: 62.75,
@@ -19,10 +19,9 @@ export class AppUtils {
       F: 71.25,
     };
 
-    return cats.reduce((acc, cat) => {
-      acc += prices[cat.pouchSize as pouchSizes];
-
-      return acc;
+    return cats.reduce((totalPrice: number, cat) => {
+      totalPrice += subscriptionPrices[cat.pouchSize as PouchSize];
+      return totalPrice;
     }, 0);
   }
 }
