@@ -9,16 +9,16 @@ export default function Home() {
           <img className={styles.image} alt={'cat-image'} src={'/image.jpg'} />
         </div>
         <div className={styles.content}>
-          <h2 className={styles.title}>{customerData.title}</h2>
+          <h3 className={styles.title}>{customerData.title}</h3>
           <p className={styles.message}>{customerData.message}</p>
           <p className={styles.totalPrice}>
             Total price: £{customerData.totalPrice.toFixed(2)}
           </p>
           <div className={styles.buttonsContainer}>
-            <button type={'button'} className={styles.seeDetailsButton}>
+            <button type="button" className={styles.seeDetailsButton}>
               See details
             </button>
-            <button type={'button'} className={styles.editDeliveryButton}>
+            <button type="button" className={styles.editDeliveryButton}>
               Edit delivery
             </button>
           </div>

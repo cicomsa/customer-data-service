@@ -5,14 +5,13 @@
 
 .card {
   border: 1px solid black;
-  padding: 40px;
   text-align: center;
   position: relative;
 }
 
 .imageContainer {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   position: absolute;
   top: -50px;
   left: 50%;
@@ -30,24 +29,40 @@
   font-weight: bold;
 }
 
-.title{
+.title {
   color: green;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .seeDetailsButton,
 .editDeliveryButton {
-  margin: 0 20px;
   padding:  10px 20px;
   text-transform: uppercase;
   border-color: green;
   border-width: 1px;
   border-style: solid;
   cursor: pointer;
+  font-size: 0.5em;
+}
+
+.content {
+  margin: 40px;
+}
+
+.message,
+.totalPrice {
+  font-size: 0.6em;
 }
 
 .seeDetailsButton {
   color: white;
   background: green;
+  margin-right: 10px;
 }
 
 .editDeliveryButton {
@@ -56,4 +71,33 @@
 }
 
 @media (min-width: 701px) {
+  .card {
+    display: flex;
+    text-align: unset;
+  }
+
+  .content {
+    margin: 0 20px;
+  }
+
+  .imageContainer {
+    position: unset;
+    width: 300px;
+    height: 200px;
+    border-radius: unset;
+    transform: unset;
+  }
+
+  .buttonsContainer {
+    margin-top: 40px;
+    justify-content: unset;
+  }
+  .seeDetailsButton,
+  .editDeliveryButton {
+    width: 50%;
+  }
+
+  .image {
+    width: 100%;
+  }
 }
