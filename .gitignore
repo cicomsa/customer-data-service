@@ -3,6 +3,9 @@ server/dist
 server/node_modules
 server/build
 
+client/.next
+client/node_modules
+
 # Logs
 logs
 *.log
