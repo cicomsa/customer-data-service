@@ -3,7 +3,7 @@ import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <main className={styles.container}>
+    <main className={styles.mainContainer}>
       <section className={styles.card}>
         <div className={styles.imageContainer}>
           <img className={styles.image} alt={'cat-image'} src={'/image.jpg'} />
@@ -15,8 +15,12 @@ export default function Home() {
             Total price: £{customerData.totalPrice.toFixed(2)}
           </p>
           <div className={styles.buttonsContainer}>
-            <button type={'button'}>See details</button>
-            <button type={'button'}>Edit delivery</button>
+            <button type={'button'} className={styles.seeDetailsButton}>
+              See details
+            </button>
+            <button type={'button'} className={styles.editDeliveryButton}>
+              Edit delivery
+            </button>
           </div>
         </div>
       </section>

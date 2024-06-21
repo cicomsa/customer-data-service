@@ -1,6 +1,13 @@
-.container {
+.mainContainer {
   max-width: 1200px;
   margin: 70px 30px;
+}
+
+.card {
+  border: 1px solid black;
+  padding: 40px;
+  text-align: center;
+  position: relative;
 }
 
 .imageContainer {
@@ -18,13 +25,6 @@
   height: 100%;
 }
 
-.card {
-  border: 1px solid black;
-  padding: 40px;
-  text-align: center;
-  position: relative;
-}
-
 .title,
 .totalPrice {
   font-weight: bold;
@@ -32,6 +32,27 @@
 
 .title{
   color: green;
+}
+
+.seeDetailsButton,
+.editDeliveryButton {
+  margin: 0 20px;
+  padding:  10px 20px;
+  text-transform: uppercase;
+  border-color: green;
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.seeDetailsButton {
+  color: white;
+  background: green;
+}
+
+.editDeliveryButton {
+  color: green;
+  background: white;
 }
 
 @media (min-width: 701px) {
