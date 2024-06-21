@@ -1,6 +1,6 @@
 .mainContainer {
   max-width: 1200px;
-  margin: 70px 30px;
+  margin: 60px auto;
 }
 
 .card {
@@ -47,7 +47,7 @@
   border-width: 1px;
   border-style: solid;
   cursor: pointer;
-  font-size: 0.5em;
+  font-size: 0.6em;
 }
 
 .content {
