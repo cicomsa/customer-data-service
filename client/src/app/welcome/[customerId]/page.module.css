@@ -20,7 +20,7 @@
     overflow: hidden;
 }
 
-.image {
+.catImage {
     height: 100%;
 }
 
@@ -70,6 +70,12 @@
     background: white;
 }
 
+.freeGiftImage {
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, 0);
+}
+
 @media (min-width: 701px) {
     .card {
         display: flex;
@@ -97,7 +103,13 @@
         width: 50%;
     }
 
-    .image {
+    .catImage {
         width: 100%;
+    }
+
+    .freeGiftImage {
+        top: -23%;
+        transform: unset;
+        right: 0;
     }
 }

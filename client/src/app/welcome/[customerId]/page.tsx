@@ -9,6 +9,7 @@ interface Route {
 }
 
 export default function Welcome(route: Route) {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const customerId = route.params.customerId;
   const [customerData, setCustomerData] = useState<CustomerData | undefined>(
     undefined,
@@ -22,9 +23,15 @@ export default function Welcome(route: Route) {
         const response = await res.json();
 
         setCustomerData(JSON.parse(response.body));
+        setIsLoading(false);
       })
-      .catch(console.error);
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false);
+      });
   }, [customerId]);
+
+  if (isLoading) return;
 
   if (!customerData)
     return <p>Customer data not found for customerId {customerId}</p>;
@@ -33,7 +40,7 @@ export default function Welcome(route: Route) {
     <main className={styles.mainContainer}>
       <section className={styles.card}>
         <div className={styles.imageContainer}>
-          <img className={styles.image} alt={'cat-image'} src={'/image.jpg'} />
+          <img className={styles.catImage} alt={'Cat'} src={'/cat.jpg'} />
         </div>
         <div className={styles.content}>
           <h3 className={styles.title}>{customerData.title}</h3>
@@ -49,6 +56,15 @@ export default function Welcome(route: Route) {
               Edit delivery
             </button>
           </div>
+          {customerData.freeGift && (
+            <img
+              className={styles.freeGiftImage}
+              alt={'FreeGift'}
+              src={'/free-gift.jpg'}
+              width={100}
+              height={100}
+            />
+          )}
         </div>
       </section>
     </main>
