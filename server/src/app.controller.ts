@@ -1,6 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
-import { NextDeliveryData } from './types';
+import { NextDeliveryDataResponse } from './types';
 
 @Controller()
 export class AppController {
@@ -12,7 +12,9 @@ export class AppController {
   }
 
   @Get(`/comms/your-next-delivery/:customerId`)
-  getNextDelivery(@Param('customerId') customerId: string): NextDeliveryData | undefined {
+  getNextDelivery(
+    @Param('customerId') customerId: string,
+  ): NextDeliveryDataResponse | undefined {
     return this.appService.getNextDelivery(customerId);
   }
 }

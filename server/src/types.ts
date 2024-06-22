@@ -5,6 +5,11 @@ export interface NextDeliveryData {
   freeGift: boolean;
 }
 
+export interface NextDeliveryDataResponse {
+  statusCode: number;
+  body: string;
+}
+
 export interface Cat {
   name: string;
   subscriptionActive: boolean;

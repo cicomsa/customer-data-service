@@ -1,0 +1,103 @@
+.mainContainer {
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.card {
+    border: 1px solid black;
+    text-align: center;
+    position: relative;
+}
+
+.imageContainer {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image {
+    height: 100%;
+}
+
+.title,
+.totalPrice {
+    font-weight: bold;
+}
+
+.title {
+    color: green;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.seeDetailsButton,
+.editDeliveryButton {
+    padding:  10px 20px;
+    text-transform: uppercase;
+    border-color: green;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    font-size: 0.6em;
+}
+
+.content {
+    margin: 40px;
+}
+
+.message,
+.totalPrice {
+    font-size: 0.6em;
+}
+
+.seeDetailsButton {
+    color: white;
+    background: green;
+    margin-right: 10px;
+}
+
+.editDeliveryButton {
+    color: green;
+    background: white;
+}
+
+@media (min-width: 701px) {
+    .card {
+        display: flex;
+        text-align: unset;
+    }
+
+    .content {
+        margin: 0 20px;
+    }
+
+    .imageContainer {
+        position: unset;
+        width: 300px;
+        height: 200px;
+        border-radius: unset;
+        transform: unset;
+    }
+
+    .buttonsContainer {
+        margin-top: 40px;
+        justify-content: unset;
+    }
+    .seeDetailsButton,
+    .editDeliveryButton {
+        width: 50%;
+    }
+
+    .image {
+        width: 100%;
+    }
+}

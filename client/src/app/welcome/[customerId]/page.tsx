@@ -1,7 +1,34 @@
-import * as customerData from './data.json';
-import styles from './page.module.css';
+'use client';
 
-export default function Home() {
+import styles from './page.module.css';
+import { useEffect, useState } from 'react';
+import { CustomerData } from '~/app/welcome/[customerId]/types';
+
+interface Route {
+  params: Record<'customerId', string>;
+}
+
+export default function Welcome(route: Route) {
+  const customerId = route.params.customerId;
+  const [customerData, setCustomerData] = useState<CustomerData | undefined>(
+    undefined,
+  );
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/comms/your-next-delivery/${customerId}`, {
+      headers: { 'Access-Control-Allow-Origin': '*' },
+    })
+      .then(async (res) => {
+        const response = await res.json();
+
+        setCustomerData(JSON.parse(response.body));
+      })
+      .catch(console.error);
+  }, [customerId]);
+
+  if (!customerData)
+    return <p>Customer data not found for customerId {customerId}</p>;
+
   return (
     <main className={styles.mainContainer}>
       <section className={styles.card}>
