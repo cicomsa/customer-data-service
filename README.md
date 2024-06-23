@@ -26,6 +26,7 @@ http://localhost:3000/welcome/ff535484-6880-4653-b06e-89983ecf4ed5
 ![alt text](assets/mobile-data-with-free-gift.png)
 
 http://localhost:3000/welcome/618f4ed6-1c5b-4993-a149-f64700bf31dd
+
 ![alt text](assets/desktop-data-without-free-gift.png)
 ![alt text](assets/mobile-data-without-free-gift.png)
 
