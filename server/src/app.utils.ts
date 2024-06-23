@@ -6,6 +6,7 @@ export class AppUtils {
       const lastCat = names.pop();
       return `${names.join(', ')} and ${lastCat}`;
     }
+
     return names.join(' and ');
   }
 

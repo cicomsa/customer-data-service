@@ -29,13 +29,13 @@ export class AppService {
     const catsNames = catsWithActiveSubscription.map((cat) => cat.name);
     const formattedCatsNames = AppUtils.formatCatsNames(catsNames);
 
-    const body = {
+    const response = {
       title: `Your next delivery for ${formattedCatsNames}`,
       message: `Hey ${customerData.firstName}! In two days' time, we'll be charging you for your next order for ${formattedCatsNames}'s fresh food.`,
       totalPrice,
       freeGift: totalPrice > 120,
     };
 
-    return { statusCode: 200, body: JSON.stringify(body) };
+    return { statusCode: 200, body: JSON.stringify(response) };
   }
 }
