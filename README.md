@@ -4,10 +4,8 @@ Task description can be found in the TASK.md file.
 
 Author: Ioana Comsa
 
-Video overview on what to expect in the readme file and when running the application.
-
 ## Application behaviour on high level
-Customer data is retrieved from the `server/data.json` and is surfaced on the customer `Welcome` page.
+Customer data is retrieved from the `server/data.json` data store and is surfaced on the customer's `Welcome` page.
 
 ## Data journey flow
 
@@ -38,13 +36,13 @@ http://localhost:3000/welcome/1
 
 http://localhost:8080/comms/your-next-delivery/ff535484-6880-4653-b06e-89983ecf4ed5
 
-![alt text](assets/server-data-not-found.png)
+![alt text](assets/server-data-found.png)
 
 **Unhappy path**
 
 http://localhost:8080/comms/your-next-delivery/1
 
-![alt text](assets/server-data-found.png)
+![alt text](assets/server-data-not-found.png)
 
 ## Libraries/Tools used
 
