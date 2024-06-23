@@ -1,4 +1,4 @@
-export interface CustomerData {
+export interface WelcomeCustomerData {
   title: string;
   message: string;
   totalPrice: number;

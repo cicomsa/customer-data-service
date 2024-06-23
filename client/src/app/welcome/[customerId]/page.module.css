@@ -9,7 +9,7 @@
     position: relative;
 }
 
-.imageContainer {
+.catImageContainer {
     width: 80px;
     height: 80px;
     position: absolute;
@@ -24,6 +24,10 @@
     height: 100%;
 }
 
+.content {
+    margin: 40px;
+}
+
 .title,
 .totalPrice {
     font-weight: bold;
@@ -31,6 +35,11 @@
 
 .title {
     color: green;
+}
+
+.message,
+.totalPrice {
+    font-size: 0.6em;
 }
 
 .buttonsContainer {
@@ -47,15 +56,6 @@
     border-width: 1px;
     border-style: solid;
     cursor: pointer;
-    font-size: 0.6em;
-}
-
-.content {
-    margin: 40px;
-}
-
-.message,
-.totalPrice {
     font-size: 0.6em;
 }
 
@@ -86,12 +86,16 @@
         margin: 0 20px;
     }
 
-    .imageContainer {
+    .catImageContainer {
         position: unset;
         width: 300px;
         height: 200px;
         border-radius: unset;
         transform: unset;
+    }
+
+    .catImage {
+        width: 100%;
     }
 
     .buttonsContainer {
@@ -101,10 +105,6 @@
     .seeDetailsButton,
     .editDeliveryButton {
         width: 50%;
-    }
-
-    .catImage {
-        width: 100%;
     }
 
     .freeGiftImage {

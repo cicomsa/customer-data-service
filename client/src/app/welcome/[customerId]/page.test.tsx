@@ -1,12 +1,12 @@
-import Welcome from '~/app/welcome/[customerId]/page';
+import WelcomeCustomerPage from '~/app/welcome/[customerId]/page';
 import { render, screen, waitFor } from '@testing-library/react';
 import fetchMock from 'jest-fetch-mock';
-import { CustomerData } from './types';
+import { WelcomeCustomerData } from './types';
 
 describe('Welcome page', () => {
   const mockCustomerId = '12345';
-  const mockCustomerData: CustomerData = {
-    title: 'Welcome',
+  const mockWelcomeCustomerData: WelcomeCustomerData = {
+    title: 'Welcome customer',
     message: 'Your order is confirmed.',
     totalPrice: 100.5,
     freeGift: true,
@@ -18,9 +18,11 @@ describe('Welcome page', () => {
 
   it('initially renders loading state', () => {
     fetchMock.mockResponseOnce(
-      JSON.stringify({ body: JSON.stringify(mockCustomerData) }),
+      JSON.stringify({ body: JSON.stringify(mockWelcomeCustomerData) }),
     );
-    waitFor(() => render(<Welcome params={{ customerId: mockCustomerId }} />));
+    waitFor(() =>
+      render(<WelcomeCustomerPage params={{ customerId: mockCustomerId }} />),
+    );
 
     const errorMessage = screen.queryByText(
       'Customer data not found for customerId',
@@ -31,7 +33,7 @@ describe('Welcome page', () => {
 
   test('displays error message when customer data is not found', async () => {
     fetchMock.mockReject(new Error('API error'));
-    render(<Welcome params={{ customerId: mockCustomerId }} />);
+    render(<WelcomeCustomerPage params={{ customerId: mockCustomerId }} />);
 
     const errorMessage = await screen.findByText(
       'Customer data not found for customerId 12345',
@@ -42,19 +44,19 @@ describe('Welcome page', () => {
 
   it('fetches and displays customer data correctly when present', async () => {
     fetchMock.mockResponseOnce(
-      JSON.stringify({ body: JSON.stringify(mockCustomerData) }),
+      JSON.stringify({ body: JSON.stringify(mockWelcomeCustomerData) }),
     );
-    render(<Welcome params={{ customerId: mockCustomerId }} />);
+    render(<WelcomeCustomerPage params={{ customerId: mockCustomerId }} />);
 
     expect(fetch).toHaveBeenCalledWith(
       `http://localhost:8080/comms/your-next-delivery/${mockCustomerId}`,
       expect.any(Object),
     );
 
-    const title = await screen.findByText(mockCustomerData.title);
-    const message = await screen.findByText(mockCustomerData.message);
+    const title = await screen.findByText(mockWelcomeCustomerData.title);
+    const message = await screen.findByText(mockWelcomeCustomerData.message);
     const totalPrice = await screen.findByText(
-      `Total price: £${mockCustomerData.totalPrice.toFixed(2)}`,
+      `Total price: £${mockWelcomeCustomerData.totalPrice.toFixed(2)}`,
     );
 
     const freeGift = await screen.findByAltText('FreeGift');
@@ -66,12 +68,14 @@ describe('Welcome page', () => {
   });
 
   test('renders correctly when no free gift is available', () => {
-    const mockDataNoGift = { ...mockCustomerData, freeGift: false };
+    const mockDataNoGift = { ...mockWelcomeCustomerData, freeGift: false };
     fetchMock.mockResponseOnce(
       JSON.stringify({ body: JSON.stringify(mockDataNoGift) }),
     );
 
-    waitFor(() => render(<Welcome params={{ customerId: mockCustomerId }} />));
+    waitFor(() =>
+      render(<WelcomeCustomerPage params={{ customerId: mockCustomerId }} />),
+    );
 
     const freeGift = screen.queryByAltText('FreeGift');
 

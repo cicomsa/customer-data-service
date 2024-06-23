@@ -88,7 +88,7 @@ yarn
 
 ```
 cd client
-npm run devWithServer
+npm run dev
 ```
 
 The command will concurrently run the server and the client

@@ -2,18 +2,19 @@
 
 import styles from './page.module.css';
 import { useEffect, useState } from 'react';
-import { CustomerData } from '~/app/welcome/[customerId]/types';
+import { WelcomeCustomerData } from '~/app/welcome/[customerId]/types';
 
 interface Route {
   params: Record<'customerId', string>;
 }
 
-export default function Welcome({ params }: Route) {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+export default function WelcomeCustomerPage({ params }: Route) {
   const customerId = params.customerId;
-  const [customerData, setCustomerData] = useState<CustomerData | undefined>(
-    undefined,
-  );
+
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [customerData, setCustomerData] = useState<
+    WelcomeCustomerData | undefined
+  >(undefined);
 
   useEffect(() => {
     fetch(`http://localhost:8080/comms/your-next-delivery/${customerId}`, {
@@ -36,7 +37,7 @@ export default function Welcome({ params }: Route) {
   return (
     <main className={styles.mainContainer}>
       <section className={styles.card}>
-        <div className={styles.imageContainer}>
+        <div className={styles.catImageContainer}>
           <img className={styles.catImage} alt={'Cat'} src={'/cat.jpg'} />
         </div>
         <div className={styles.content}>
