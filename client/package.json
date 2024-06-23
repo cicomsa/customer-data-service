@@ -3,19 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"cd ../server && npm start\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "devWithServer": "concurrently \"npm run dev\" \"cd ../server && npm start\"",
     "test": "jest"
   },
   "dependencies": {
     "jest-fetch-mock": "^3.0.3",
     "next": "14.2.4",
     "react": "^18",
-    "react-dom": "^18",
-    "sass": "^1.77.6"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.6",
