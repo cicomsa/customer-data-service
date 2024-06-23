@@ -15,7 +15,7 @@ Customer data is retrieved from the `server/data.json` data store and is surface
 
 ### Client
 
-**Happy path**
+**Happy path** - Customer data is found and returned given a customer id
 
 http://localhost:3000/welcome/ff535484-6880-4653-b06e-89983ecf4ed5
 
@@ -26,20 +26,21 @@ http://localhost:3000/welcome/618f4ed6-1c5b-4993-a149-f64700bf31dd
 ![alt text](assets/desktop-data-without-free-gift.png)
 ![alt text](assets/mobile-data-without-free-gift.png)
 
-**Unhappy path**
+**Unhappy path** - Customer data is not found given a customer id
 
 http://localhost:3000/welcome/1
 
 ![alt text](assets/customer-data-not-found.png)
 
 ### Server
-**Happy path**
+
+**Happy path** - Customer data is found and returned given a customer id
 
 http://localhost:8080/comms/your-next-delivery/ff535484-6880-4653-b06e-89983ecf4ed5
 
 ![alt text](assets/server-data-found.png)
 
-**Unhappy path**
+**Unhappy path** - Customer data is not found given a customer id
 
 http://localhost:8080/comms/your-next-delivery/1
 
