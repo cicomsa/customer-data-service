@@ -9,6 +9,9 @@ Customer data is retrieved from the `server/data.json` data store and is surface
 
 ## Data journey flow
 
+**Happy path** - Customer data is found and returned given a customer id
+**Unhappy path** - Customer data is not found given a customer id
+
 ![alt text](assets/customer-data-service-flows.png)
 
 ## Screenshots
