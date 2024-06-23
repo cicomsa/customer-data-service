@@ -11,7 +11,7 @@ Customer data is retrieved from the `server/data.json` data store and is surface
 
 **Happy path** - Customer data is found and returned given a customer id
 
-**Unhappy path** - Customer data is not found given a customer id
+**Unhappy path** - Customer data is not found given a customer id and error message is returned
 
 ![alt text](assets/customer-data-service-flows.png)
 
@@ -31,7 +31,7 @@ http://localhost:3000/welcome/618f4ed6-1c5b-4993-a149-f64700bf31dd
 ![alt text](assets/desktop-data-without-free-gift.png)
 ![alt text](assets/mobile-data-without-free-gift.png)
 
-**Unhappy path** - Customer data is not found given a customer id
+**Unhappy path** - Customer data is not found given a customer id and error message is returned
 
 http://localhost:3000/welcome/1
 
@@ -45,7 +45,7 @@ http://localhost:8080/comms/your-next-delivery/ff535484-6880-4653-b06e-89983ecf4
 
 ![alt text](assets/server-data-found.png)
 
-**Unhappy path** - Customer data is not found given a customer id
+**Unhappy path** - Customer data is not found given a customer id and error message is returned
 
 http://localhost:8080/comms/your-next-delivery/1
 
