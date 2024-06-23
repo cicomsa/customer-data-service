@@ -4,6 +4,8 @@ Task description can be found in the TASK.md file.
 
 Author: Ioana Comsa
 
+[Video](https://www.loom.com/share/f7569502df0b41b387d203da816d14e3?sid=520b4dc9-097b-4e04-94ea-34db59629ac1) with overview of the README.md file and demo of the application
+
 ## Application behaviour on high level
 Customer data is retrieved from the `server/data.json` data store and is surfaced on the customer's `Welcome` page.
 
