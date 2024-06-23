@@ -8,9 +8,9 @@ interface Route {
   params: Record<'customerId', string>;
 }
 
-export default function Welcome(route: Route) {
+export default function Welcome({ params }: Route) {
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const customerId = route.params.customerId;
+  const customerId = params.customerId;
   const [customerData, setCustomerData] = useState<CustomerData | undefined>(
     undefined,
   );
@@ -25,10 +25,7 @@ export default function Welcome(route: Route) {
         setCustomerData(JSON.parse(response.body));
         setIsLoading(false);
       })
-      .catch((error) => {
-        console.error(error);
-        setIsLoading(false);
-      });
+      .catch(() => setIsLoading(false));
   }, [customerId]);
 
   if (isLoading) return;
